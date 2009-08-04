@@ -26,7 +26,7 @@ end
 
 desc 'Remove the prototype / script.aculo.us javascript files'
 task :scrub do
-  Rake::Task['jrails:update:scrub'].invoke
+  Rake::Task['jrails:scrub'].invoke
 end
 
 
