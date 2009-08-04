@@ -1,3 +1,8 @@
+0.4.2 (4 august 2009)
+* Remove SlideUp & SlideDown fonctions to work with jquery.droppy
+* Add the document.ready syntax on javascript_tag helpers to work
+when javascripts (jquery-ui jrails) are include a bottom
+
 0.4.1 (31 July 2009)
 * Gemification
 * Support for Ruby 1.9.X

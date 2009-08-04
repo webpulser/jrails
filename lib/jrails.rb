@@ -191,7 +191,7 @@ module ActionView
         javascript << "#{callback}}"
         #javascript << ", '#{options[:on]}'" if options[:on]
         javascript << ")"
-        javascript_tag(javascript)
+        javascript_tag(%(#{JQUERY_VAR}(function(){ #{javascript} });))
       end
       
       def build_callbacks(options)
@@ -336,7 +336,7 @@ module ActionView
           javascript << ",#{speed}" unless speed.nil?
           javascript << ");"
         end
-        
+        %(#{JQUERY_VAR}(function(){ #{javascript} });)
       end
       
       def sortable_element_js(element_id, options = {}) #:nodoc:
@@ -379,11 +379,11 @@ module ActionView
         
         options[:connectWith] = array_or_string_for_javascript(options[:connectWith]) if options[:connectWith]
         
-        %(#{JQUERY_VAR}('#{jquery_id(element_id)}').sortable(#{options_for_javascript(options)});)
+        %(#{JQUERY_VAR}(function(){ #{JQUERY_VAR}('#{jquery_id(element_id)}').sortable(#{options_for_javascript(options)}); });)
       end
       
       def draggable_element_js(element_id, options = {})
-        %(#{JQUERY_VAR}("#{jquery_id(element_id)}").draggable(#{options_for_javascript(options)});)
+        %(#{JQUERY_VAR}(function(){ #{JQUERY_VAR}("#{jquery_id(element_id)}").draggable(#{options_for_javascript(options)}); });)
       end
       
       def drop_receiving_element_js(element_id, options = {})
@@ -403,7 +403,7 @@ module ActionView
           options[option] = "'#{options[option]}'" if options[option]
         end
         
-        %(#{JQUERY_VAR}('#{jquery_id(element_id)}').droppable(#{options_for_javascript(options)});)
+        %(#{JQUERY_VAR}(function(){ #{JQUERY_VAR}('#{jquery_id(element_id)}').droppable(#{options_for_javascript(options)}); });)
       end
       
     end

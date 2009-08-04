@@ -176,12 +176,6 @@
 		squish : function(speed, callback) {
 			return this.hide('scale', { origin: ['top', 'left'] }, speed, callback);
 		},
-		slideUp : function(speed, callback) {
-			return this.hide('slide', { direction: 'up'}, speed, callback);
-		},
-		slideDown : function(speed, callback) {
-			return this.show('slide', { direction: 'up'}, speed, callback);
-		},
 		switchOff : function(speed, callback) {
 			return this.hide('clip', {}, speed, callback);
 		},

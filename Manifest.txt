@@ -1,7 +1,6 @@
 CHANGELOG
 Manifest.txt
 README
-install.rb
 init.rb
 bin
 bin/jrails

@@ -8,7 +8,10 @@ are probably my fault, thanks to the original author.
 
 Install
 
-* .script/plugin install http://ennerchi.googlecode.com/svn/trunk/plugins/jrails
+* in your project directory :
+* jrails install
+* and in environement.rb
+* config.gem 'webpulser-jrails', :source => 'http://gems.github.com', :lib => 'jrails'
 
 Project Site
 
